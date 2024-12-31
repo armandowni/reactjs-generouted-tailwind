@@ -1,0 +1,26 @@
+tr > td.stickyCol,
+th.stickyCol {
+  @apply !min-w-max;
+  @apply !sticky;
+  @apply !border-opacity-40;
+  @apply !overflow-visible;
+  @apply !gap-px;
+  backdrop-filter: blur(4px) !important;
+  @apply z-20;
+}
+tr > td:before {
+  @apply !overflow-hidden;
+}
+tr > td.stickyCol > .childCol,
+th.stickyCol > .childCol {
+  @apply !flex;
+  @apply !gap-3;
+}
+tr > td.stickyCol.stickyLeft,
+th.stickyCol.stickyLeft {
+  @apply !left-0;
+}
+tr > td.stickyCol.stickyRight,
+th.stickyCol.stickyRight {
+  @apply !right-0;
+}

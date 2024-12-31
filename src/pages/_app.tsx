@@ -1,14 +1,29 @@
-import { Outlet } from "react-router-dom";
+import AuthErrorPage from "@/component/shared/forbidden";
+import LoadingProvider from "@/component/shared/loading";
+import SnackbarProvider from "@/component/shared/snackbar";
+import { Path, useNavigate } from "@/services/router";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { Outlet, useHref, useRouteError } from "react-router-dom";
 
-// this file is for layout of the
+export const Catch = () => {
+  const error = useRouteError() as Error;
+  return <AuthErrorPage code={400} messages={error.message} status="error" />;
+};
+
 export default function App() {
-  return (
-    <div>
-      {/* for name app */}
-      <title>naming</title>
-      <span className="text-blue-500 text-xl">inside layout</span>
+  const navigate = useNavigate();
 
-      <Outlet />
-    </div>
+  return (
+    <NextUIProvider useHref={useHref} navigate={(path) => navigate(path as Path)}>
+      <NextThemesProvider attribute="class" defaultTheme="light">
+        <LoadingProvider>
+          <SnackbarProvider>
+            <Outlet />
+          </SnackbarProvider>
+        </LoadingProvider>
+      </NextThemesProvider>
+    </NextUIProvider>
   );
 }

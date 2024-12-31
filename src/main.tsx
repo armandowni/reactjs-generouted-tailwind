@@ -1,10 +1,12 @@
-import { Routes } from "@generouted/react-router";
-import { NextUIProvider } from "@nextui-org/react";
+/* eslint-disable prettier/prettier */
+import "./utils/translate";
+import "@/assets/css/global.css";
+import { routes } from "@generouted/react-router/lazy";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+window.global = window;
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <NextUIProvider>
-    <Routes />
-  </NextUIProvider>
+  <RouterProvider router={createBrowserRouter(routes)} />
 );

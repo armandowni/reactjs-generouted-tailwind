@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-lora;
+}
+
+.text-warning-foreground,
+.text-success-foreground,
+.text-danger-foreground {
+  @apply text-white;
+}
+
+.step2 {
+  @apply bg-[#964D9C];
+}
+
+* {
+  @apply font-roboto;
+}
+
+.btnIconWhite path {
+  @apply text-white;
+}
+.btnIconBlack path {
+  @apply text-black;
+}
+
+.btnIconBinusOrange path {
+  @apply text-[#F18700];
+}
+.navbar {
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
+  @apply px-4;
+  @apply py-2;
+}
