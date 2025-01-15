@@ -2,7 +2,6 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "@/assets/css/Table.css";
-import PaginationCustom from "@/components/shared/table/pagination";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +17,7 @@ import {
   TableRow
 } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
+import PaginationCustom from "./pagination";
 
 export declare type ColumnSetting = {
   name: string;
@@ -35,7 +35,7 @@ interface TableColumnSetting extends ColumnSetting {
 
 declare type TableProps = {
   className: string;
-  columns?: ColumnSetting[];
+  columns: ColumnSetting[];
   datas: any[];
   count: number;
   selectionMode?: SelectionMode;

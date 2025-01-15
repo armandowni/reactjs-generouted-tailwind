@@ -3,7 +3,7 @@
 /* eslint-disable */
 import { components, hooks, utils } from "@generouted/react-router/client";
 
-export type Path = `/example-components` | `/example-page` | `/notAuthorized`;
+export type Path = `/` | `/notAuthorized`;
 
 export type Params = {};
 

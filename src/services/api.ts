@@ -1,4 +1,5 @@
 const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
+const baseApiPathname = import.meta.env.VITE_BASE_API_PATHNAME;
 const baseHeaders = new Headers({
   "Content-Type": "application/json"
 });
@@ -18,7 +19,7 @@ export function get(
   search?: { [key: string]: string | number | object },
   headers?: Headers
 ) {
-  const url: URL = new URL("/nuxtTypeorm/api/v1" + path, baseApiUrl);
+  const url: URL = new URL(baseApiPathname + path, baseApiUrl);
   const config: RequestInit = {
     method: "GET",
     headers: headers || baseHeaders
@@ -35,7 +36,7 @@ export function post<T>(
   search?: { [key: string]: string | number | object },
   headers?: Headers
 ) {
-  const url = new URL("/nuxtTypeorm/api/v1" + path, baseApiUrl);
+  const url = new URL(baseApiPathname + path, baseApiUrl);
   const config: RequestInit = {
     method: "POST",
     headers: headers || baseHeaders
@@ -56,10 +57,10 @@ export function put<T>(
   search?: { [key: string]: string | number | object },
   headers?: Headers
 ) {
-  const url = new URL("/nuxtTypeorm/api/v1" + path, baseApiUrl);
+  const url = new URL(baseApiPathname + path, baseApiUrl);
   const config: RequestInit = {
     method: "PUT",
-    headers
+    headers: headers || baseHeaders
   };
 
   if (body) {
@@ -77,7 +78,7 @@ export function del<T>(
   search?: { [key: string]: string | number | object },
   headers?: Headers
 ) {
-  const url = new URL("/nuxtTypeorm/api/v1" + path, baseApiUrl);
+  const url = new URL(baseApiPathname + path, baseApiUrl);
   const config: RequestInit = {
     method: "DELETE",
     headers: headers || baseHeaders

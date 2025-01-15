@@ -49,7 +49,7 @@ const Next = () => (
 );
 
 export const TestTitle = () => (
-  <div id="header" className="flex flex-col justify-center pt-8 sm:pt-0">
+  <div id="header" className="flex flex-col justify-center pt-8 sm:pt-0 w-full">
     <span className="text-center text-xl font-extrabold">Template project with</span>
     <div className="flex flex-col items-center justify-center gap-0 lg:flex-row lg:gap-2">
       <a

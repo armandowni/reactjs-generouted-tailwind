@@ -55,7 +55,7 @@ This folder is only for creating a page where the route has been automatically c
 
 **services**
 
-This folder is only for service hit api to third parties or the binus api itself
+This folder is only for service hit api to third parties
 
 **types**
 
