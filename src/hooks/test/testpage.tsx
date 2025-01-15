@@ -18,7 +18,7 @@ export default function TestPageHooks() {
     { name: "Age", key: "age" },
     {
       name: "App From",
-      key: "",
+      key: "status",
       feature: (item: any) =>
         (item.status & 2) == 2
           ? "Nuxt App 3"
@@ -31,7 +31,7 @@ export default function TestPageHooks() {
                 : "Unknown"
     },
     {
-      name: "",
+      name: "Actions",
       key: "",
       feature: (item: any) =>
         (item.status & 8) == 8 ? (
