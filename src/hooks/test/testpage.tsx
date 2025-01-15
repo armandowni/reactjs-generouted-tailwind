@@ -17,6 +17,20 @@ export default function TestPageHooks() {
     { name: "Name", key: "name" },
     { name: "Age", key: "age" },
     {
+      name: "App From",
+      key: "",
+      feature: (item: any) =>
+        (item.status & 2) == 2
+          ? "Nuxt App 3"
+          : (item.status & 1) == 1
+            ? "Nuxt App 2"
+            : (item.status & 4) == 4
+              ? "Nextjs App"
+              : (item.status & 8) == 8
+                ? "Reactjs-Generouted App"
+                : "Unknown"
+    },
+    {
       name: "",
       key: "",
       feature: (item: any) =>
