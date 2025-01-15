@@ -37,13 +37,13 @@ export const GroupingComponent = styled.div`
 `;
 
 const Daisy = () => (
-  <div className="bg-gradient-to-br from-red-500 to-red-700 bg-clip-text text-4xl font-bold text-transparent lg:text-8xl">
+  <div className="bg-gradient-to-br from-gray-400 to-gray-600 bg-clip-text text-4xl font-bold text-transparent lg:text-8xl">
     NEXT UI
   </div>
 );
 
 const Next = () => (
-  <div className="bg-gradient-to-br from-gray-400 to-black bg-clip-text text-4xl font-bold text-transparent lg:text-8xl">
+  <div className="bg-gradient-to-br from-gray-400 to-blue-500 bg-clip-text text-4xl font-bold text-transparent lg:text-8xl">
     REACT JS
   </div>
 );
